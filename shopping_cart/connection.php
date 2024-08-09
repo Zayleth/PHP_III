@@ -8,7 +8,10 @@ $db_password = '123456'; // contraseña del usuario
 // Crear la conexión
 $conn = pg_connect("host=$db_host dbname=$db_name user=$db_user password=$db_password");
 
+?>
 
+
+<?php
 // Comprobar si la conexión fue exitosa
 /*
 if (!$conn) {

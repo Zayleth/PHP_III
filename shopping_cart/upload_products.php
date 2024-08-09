@@ -128,9 +128,9 @@ https://templatemo.com/tm-559-zay-shop
     <!-- Start Content Page -->
     <div class="container-fluid bg-light py-5">
         <div class="col-md-6 m-auto text-center">
-            <h1 class="h1">Register</h1>
+            <h1 class="h1">Upload Products</h1>
             <p>
-                Fill out your details to register
+                Add new products to inventory
             </p>
         </div>
     </div>
@@ -138,23 +138,37 @@ https://templatemo.com/tm-559-zay-shop
     <!-- Start Contact -->
     <div class="container py-5">
         <div class="row py-5">
-            <form action="actions.php" class="col-md-9 m-auto" method="post" role="form">
+            <form action="actions.php" class="col-md-9 m-auto" method="post" role="form" enctype="multipart/form-data">
+
                 <div class="row">
                     <div class="mb-3">
-                        <label for="inputemail">Email</label>
-                        <input type="email" class="form-control mt-1" id="email" name="email" placeholder="Email">
+                        <label for="inputemail">Product Name</label>
+                        <input type="text" class="form-control mt-1" id="product" name="product" placeholder="Product Name">
                     </div>
-                </div>
-                <div class="mb-3">
-                    <label for="inputsubject">Nick</label>
-                    <input type="text" class="form-control mt-1" id="subject" name="subject" placeholder="Nick Name">
-                </div>
-                <div class="mb-3">
-                    <label for="inputmessage">Password</label>
-                    <input type="password" class="form-control mt-1" id="password" name="password" placeholder="Password">
+
                 </div>
 
-                <input type="hidden" class="form-control mt-1" id="oculto" name="oculto" value="1">
+                <div class="mb-3">
+                    <label for="inputmessage">Product Image</label>
+                    <input type="file" class="form-control mt-1" id="product_img" name="product_img" placeholder="Add a product image">
+                </div>
+
+                <div class="mb-3">
+                    <label for="inputsubject">Product Description</label><br>
+                    <textarea name="description" id="description" cols="30" rows="10" placeholder="Insert a description of the product"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="inputmessage">Product Price</label>
+                    <input type="text" class="form-control mt-1" id="product_price" name="product_price" placeholder="Add the product price">
+                </div>
+
+                <div class="mb-3">
+                    <label for="inputmessage">Stocktaking</label>
+                    <input type="text" class="form-control mt-1" id="inventory" name="inventory">
+                </div>
+
+                <input type="hidden" class="form-control mt-1" id="subject" name="oculto" value="2">
 
                 <div class="row">
                     <div class="col text-end mt-2">
