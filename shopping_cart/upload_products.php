@@ -150,7 +150,7 @@ https://templatemo.com/tm-559-zay-shop
 
                 <div class="mb-3">
                     <label for="inputmessage">Product Image</label>
-                    <input type="file" class="form-control mt-1" id="product_img" name="product_img" placeholder="Add a product image">
+                    <input type="file" class="form-control mt-1" id="img" name="product_img" placeholder="Add a product image">
                 </div>
 
                 <div class="mb-3">
