@@ -172,7 +172,7 @@ https://templatemo.com/tm-559-zay-shop
 
                 <div class="row">
                     <div class="col text-end mt-2">
-                        <button type="submit" class="btn btn-success btn-lg px-3">Register</button>
+                        <button type="submit" class="btn btn-success btn-lg px-3">Add Product</button>
                     </div>
                 </div>
             </form>
