@@ -1,6 +1,8 @@
 <?php
 include "connection.php";
 extract ($_POST);
+$fecha = date("Y-m-d");
+$hora = date("h:i:s A");
 
 // CASES
 switch ($oculto) {
@@ -56,6 +58,16 @@ switch ($oculto) {
         $insert_into_database = "INSERT INTO products(name_products, description, image, price, amount, status) 
         VALUES('$product', '$description', '$ima', '$product_price', '$inventory', '0')";
         pg_query($conn, $insert_into_database);
+
+        break;
+
+    case 3:
+        $query = "INSERT INTO cart (id_users_cart, id_products_cart, amount_cart, date_cart, hour_cart, status) 
+        VALUES ('1', '$indice', 'product_quanity', '$fecha', '$hora', '0')";
+        // EJECUTAR LA CONSULTA
+        $consulta = pg_query($conn, $query);
+        break;
+
 }
 
 ?>
