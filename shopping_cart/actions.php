@@ -63,7 +63,7 @@ switch ($oculto) {
 
     case 3:
         $query = "INSERT INTO cart (id_users_cart, id_products_cart, amount_cart, date_cart, hour_cart, status) 
-        VALUES ('1', '$indice', 'product_quanity', '$fecha', '$hora', '0')";
+        VALUES ('1', '$indice', '$product_quanity', '$fecha', '$hora', '0')";
         // EJECUTAR LA CONSULTA
         $consulta = pg_query($conn, $query);
         break;
