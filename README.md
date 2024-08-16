@@ -3,7 +3,7 @@
 # Shopping Cart
 
 > Practice project for shopping cart simulation.
-- Includes:
+Includes:
 - Log in
 - Registration
 - Uploading products with their respective images
