@@ -67,7 +67,48 @@ switch ($oculto) {
         // EJECUTAR LA CONSULTA
         $consulta = pg_query($conn, $query);
         break;
+        // RESULT: 3, 3, 1, 8, 3, 2024-08-14, 11:00:00 PM, 0
 
+
+    // para LOG IN
+    case 4:
+        // sentencia para permitir el login del user con el nick o correo PERO que coincida con la contraseña.
+        $sql = "SELECT id, email, nick FROM users WHERE password = MD5('$password') AND nick ='$pase' or email = '$pase'";
+      
+        // (nick='$pase' or mail='$pase') -> $pase name en el LOG IN -> para que tome ambas entradas del input (tanto mail como user)
+      
+      
+        // consulta que va a la base de datos
+        $query = pg_query($conn, $sql);
+      
+        if ($ver = pg_fetch_array($query)) {
+            session_start();
+            $_SESSION["quien"] = $ver[0];
+            $_SESSION["nick"] = $ver[2];
+            $_SESSION["correo"] = $ver[1];
+            header("location:index.php");   
+      
+        } else { 
+            header("location:login.php?respuesta=5");
+        }
+        break;
+      
+    
+    // para cerrar sesion
+    case 5:
+      
+        // se coloca session_start() para trabajar con SESIONES COMO TAL 
+        session_start();
+      
+        // se vacia la variable $SESSION 
+        session_unset();
+      
+        // se elimina la sesion
+        session_destroy();
+      
+        // lo mandamos a pagina principal
+        header("location:index.php");
+        break;
 }
 
 ?>
