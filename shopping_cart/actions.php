@@ -1,6 +1,7 @@
 <?php
 include "connection.php";
 extract ($_POST);
+extract ($_GET);
 $fecha = date("Y-m-d");
 $hora = date("h:i:s A");
 
@@ -96,7 +97,6 @@ switch ($oculto) {
     
     // para cerrar sesion
     case 5:
-      
         // se coloca session_start() para trabajar con SESIONES COMO TAL 
         session_start();
       
