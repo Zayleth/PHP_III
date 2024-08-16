@@ -1,8 +1,14 @@
 ![](https://img.shields.io/badge/Uneweb-blue)
 
-# Project Name
+# Shopping Cart
 
-> One paragraph statement about the project.
+> Practice project for shopping cart simulation.
+> Includes:
+> Log in
+> Registration
+> Uploading products with their respective images
+> View of all products
+> View of a single product
 
 ![screenshot](./app_screenshot.png)
 
