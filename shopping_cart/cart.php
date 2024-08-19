@@ -141,7 +141,8 @@ https://templatemo.com/tm-559-zay-shop
             $total_subprize = 0;
 			$sql = "SELECT cart.id_cart, products.name_products, cart.amount_cart, products.price 
             FROM cart, products 
-            WHERE products.id_products = cart.id_products_cart";
+            WHERE products.id_products = cart.id_products_cart
+            AND cart.id_users_cart='$_SESSION[quien]'";
 			
             $sentencia = pg_query($conn, $sql);
 			?>

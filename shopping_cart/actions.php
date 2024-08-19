@@ -2,6 +2,7 @@
 include "connection.php";
 extract ($_POST);
 extract ($_GET);
+session_start();
 $fecha = date("Y-m-d");
 $hora = date("h:i:s A");
 
@@ -64,9 +65,10 @@ switch ($oculto) {
 
     case 3:
         $query = "INSERT INTO cart (id_users_cart, id_products_cart, amount_cart, date_cart, hour_cart, status) 
-        VALUES ('1', '$indice', '$product_quanity', '$fecha', '$hora', '0')";
+        VALUES ('$_SESSION[quien]', '$indice', '$product_quanity', '$fecha', '$hora', '0')";
         // EJECUTAR LA CONSULTA
         $consulta = pg_query($conn, $query);
+        header ("location:cart.php");
         break;
         // RESULT: 3, 3, 1, 8, 3, 2024-08-14, 11:00:00 PM, 0
 
@@ -83,7 +85,7 @@ switch ($oculto) {
         $query = pg_query($conn, $sql);
       
         if ($ver = pg_fetch_array($query)) {
-            session_start();
+            // session_start();
             $_SESSION["quien"] = $ver[0];
             $_SESSION["nick"] = $ver[2];
             $_SESSION["correo"] = $ver[1];
